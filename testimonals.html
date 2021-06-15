@@ -1,0 +1,447 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 , maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Programmers Club</title>
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!--pop up-->
+    <script type="text/javascript"
+        src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js'></script>
+
+    <script type="text/javascript" src='https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style4.css' %}">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript">
+        function zoom() {
+            document.body.style.zoom = "88%" 
+        }
+</script>
+    <style>
+        nav {
+          position: absolute;
+          z-index: 10;
+          left: 0;
+          right: 0;
+          
+          font-family: 'Montserrat', sans-serif;
+          height: 100px;
+          
+      }
+      nav .nav-menu{
+        float: right; 
+        padding: 0;
+        margin: 0;
+        width: 50%;
+        height: 50%;
+        display: flex;
+        justify-content: space-around;
+          align-items: center;
+      }
+      nav .nav-menu li {
+        list-style: none;
+      } 
+      nav .nav-menu a{
+        display: block;
+        padding: 1em;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+      }
+      #nav-toggle{
+        position: absolute;
+        top: -100px;
+      }
+      nav .icon-burger{
+        display:none;
+        position: absolute;
+        right: 5%;
+        top: 50%; 
+        transform: translateY(-50%);
+      }
+      nav .icon-burger .line {
+          width: 30px;
+          height: 5px;
+          background-color: #fff;
+          margin: 5px;
+          border-radius: 3px;
+          transition: all .3s ease-in-out;
+      }
+      @media screen and (max-width: 1200px) {
+        nav .nav-menu {
+              float: none;
+              position: fixed;
+              z-index: 9;
+              left: 0;
+              right: 0;
+              top: 100px;
+              bottom: 100%;
+              width: auto;
+              height: auto;
+              flex-direction: column;
+              justify-content: space-evenly;
+              background-color: rgba(0,0,0,.8);
+              overflow: hidden;
+              box-sizing: border-box;
+              transition: all .5s ease-in-out;
+          }
+        nav .nav-menu a {
+              font-size: 20px;
+          }
+        nav :checked ~ .nav-menu {
+              bottom: 0;
+          }
+          nav .icon-burger {
+              display: block;
+          }
+          nav :checked ~ .icon-burger .line:nth-child(1) {
+              transform: translateY(10px) rotate(225deg);
+          }
+          nav :checked ~ .icon-burger .line:nth-child(3) {
+              transform: translateY(-10px) rotate(-225deg);
+          }
+          nav :checked ~ .icon-burger .line:nth-child(2) {
+              opacity: 0;
+          }
+      }
+      </style>
+      </head>
+      
+      
+      
+      <body onload="zoom()">
+        <header id="header">
+          <div class="container-fluid">
+                  
+            <nav id="nav-menu-container">
+              <input id="nav-toggle" type="checkbox">
+              <div id="logo" class="pull-left">
+                <h1><a class="scrollto">Programmers Club</a></h1>
+              </div>
+              <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/compt">Competitions</a></li>
+                <li><a href="/resources">Resources</a></li>
+                <li class="menu-active"><a href="/testimonals">Testimonials</a></li>
+                <li><a href="http://sritproclub.herokuapp.com" target="_blank">Blog</a></li>
+                <li>
+                  <form style="padding-right:10px;">
+                    <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                      data-payment_button_id="pl_HIDvp4Tp9X9JYj" async> </script>
+                  </form>
+                </li>
+              </ul>
+              <label for="nav-toggle" class="icon-burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+              </label>
+            </nav><!-- #nav-menu-container -->
+          </div>
+        </header><!-- #header -->
+      
+      
+    <section id="screen">
+        <div class="page-heading about-heading header-text">
+            <div class="container">
+
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+
+            <header class="section-header">
+                <h3>What our Students say!</h3>
+            </header>
+        </div>
+
+    </section>
+    <div id="people-view">
+
+        <div class="testimonial-views">
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <div class="col-md-3 col-lg-3 col-sm-6">
+                        <div class="people-image">
+                            <img src="{% static 'img/img/tabassum.jpg' %}">
+
+                        </div>
+                        <h4>Javeria Tabassum</h4>
+                        <h5>ASE at TCS</h5>
+                        <p><span><b>My Experience on ProClub</b></span><br><img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" /> It is a great initiative
+                            by programmers club of SRIT to make students at campus fully engaged in coding and being
+                            competitive in programming<img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" /> </p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6">
+                        <div class="people-image">
+                            <img src="{% static 'img/img/sadiya.jpg' %}">
+
+                        </div>
+                        <h4>Sadiya Mudassir</h4>
+                        <h5>ASE at TCS</h5>
+                        <p><span><b>My Experience on ProClub</b></span><br><img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" />
+                            I sincerely thank coordinators of ProClub and entire team for such amazing contests and
+                            explanation through blog, due to which I got placed in TCS <img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" /> </p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6">
+                        <div class="people-image">
+                            <img src="{% static 'img/img/ashokmahendrakar.jpg' %}">
+
+                        </div>
+                        <h4>Ashok Mahendrakar</h4>
+                        <h5>ASE at TCS</h5>
+                        <p><span><b>My Experience on ProClub</b></span><br> <img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" />
+                            
+                            
+                            Its been a great platform
+                            for me to enhance my problem solving abilities. Through this platform I won hackathons conducted
+                            by companies and I look forward to participate more in future!<img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" /> </p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6">
+                        <div class="people-image">
+                            <img src="{% static 'img/img/vamsi.jpg' %}">
+
+                        </div>
+                        <h4>Naga Vamsidhar Reddy</h4>
+                        <h5>Student</h5>
+                        <p><span><b>My Experience on ProClub</b></span><br><img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" />
+                                I have no idea about programming till my third semester but participating in these contests
+                                and being competitive to each other helped me to come out of my comfort zone and tested my
+                                caliber to go beyond my limits
+                            <img src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-views">
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <div class="col-md-3 col-lg-3 col-sm-6">
+                        <div class="people-image">
+                            <img src="{% static 'img/img/ashu.jpeg' %}">
+
+                        </div>
+                        <h4>Ashwini Sahadev</h4>
+                        <h5>ASE at TCS</h5>
+                        <p><span><b>My Experience on ProClub</b></span><br><img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" />
+                                The resources and the
+                            contests held by the Programmers Club were very helpful and have improved our programming
+                            knowlegde and competitive spirit as well. I heartily thank the organisers and developers
+                                
+                                <img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" /> </p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6">
+                        <div class="people-image">
+                            <img src="{% static 'img/img/aishu.jpg' %}">
+
+                        </div>
+                        <h4>Aishwarya Jawalkar</h4>
+                        <h5>ASE at TCS</h5>
+                        <p><span><b>My Experience on ProClub</b></span><br><img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" />Being in second year I got
+                            internship due to the contests conducted by SRIT ProClub. All contests improved my coding
+                            skills and excited to participate more in future<img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" /> </p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6">
+                        <div class="people-image">
+                            <img src="{% static 'img/img/sathyam.jpg' %}">
+
+                        </div>
+                        <h4>Sathyamshubhava Vallamkonda</h4>
+                        <h5>ASE at TCS</h5>
+                        <p><span><b>My Experience on ProClub</b></span><br><img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" />
+                            This club has come up with a great initiative of creating awareness about the importance of
+                            coding in the current progressive world and has even provided the ongoing contests conducted
+                            by various companies.This has helped us in knowing about different events and participating
+                            in them<img src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" /> </p>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-sm-6">
+                        <div class="people-image">
+                            <img src="{% static 'img/img/niranjan.jpg' %}">
+
+                        </div>
+                        <h4>Niranjan Chennaka</h4>
+                        <h5>ASE at TCS</h5>
+                        <p><span><b>My Experience on ProClub</b></span><br><img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" />
+                           
+                            
+                            Its an amazing journey to participate in programmers club contests which helped me to boost
+                            all my skills in programming. I owe my success to
+                            ProClub of SRIT and team
+                            
+                            <img
+                                src="https://img.icons8.com/ios-glyphs/30/fa314a/quote.png" /> </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <section>
+        <footer class="footer-area">
+          <div class="footer-wave-box">
+            <div class="footer-wave footer-animation"></div>
+          </div>
+          <div class="main">
+            <div class="footer">
+              <div class="single-footer">
+                <h4><strong>about us</strong></h4>
+                <p>Programming skills are essential to students in order to test and enhance their problem solving and analytical skills. Programmers Club aims to establish a coding culture on campus, reaching every student passionate about coding. This helps them immensely during placements and can also bring laurels to the institution through various national and international programming contests. The club’s main motto is Empowering Knowledge </p>
+                <div class="footer-social">
+                  <a href="https://www.facebook.com/sritatp/" target="_blank"><i class="fa fa-facebook-f"></i></a>
+                  <a href="https://twitter.com/sritatp?lang=en" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/sritatp/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+                  <a href="https://www.linkedin.com/school/sritatp/?originalSubdomain=in" target="_blank"><i
+                      class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="single-footer">
+                <h4><strong>main menu</strong></h4>
+                <ul>
+                  <li><a href="/"><i class="fa fa-chevron-right"></i> Home</a></li>
+                  <li><a href="/compt"><i class="fa fa-chevron-right"></i> Competitions</a></li>
+                  <li><a href="/resources"><i class="fa fa-chevron-right"></i> Resources</a></li>
+                  <li><a href="/testimonals"><i class="fa fa-chevron-right"></i> Testimonials</a></li>
+                  <li><a href="http://sritproclub.herokuapp.com" target="_blank"><i class="fa fa-chevron-right"></i>
+                      Blog</a></li>
+    
+                </ul>
+              </div>
+              <div class="single-footer">
+                <h4><strong>quick links</strong></h4>
+                <ul>
+                  <li><a><details><summary  class="fa fa-chevron-right"> <b> Privacy Policy</b></summary><p class="text"><ul><li>This site may use "cookies" to enhance User experience.</li><li>This site may take contact information of users only with their consent.</li><li>To improve our site We may use feedback you provide to improve our service.</li><li>To process payments - We do not share this information with outside parties except to the extent necessary to provide the service.</li></ul></p>
+                  </details></a></li>
+                  
+                  <li><a><details><summary  class="fa fa-chevron-right"> <b> Terms and Conditions</b></summary><p class="text"><ul><li>In order to access our resources users may be required to provide certain information like contact details as a part registration.
+                    Users must agree that any information they provide will always be accurate and up to date.</li></ul>
+                  </p>
+                  </details></a></li>
+    
+    
+                </ul>
+              </div>
+    
+    
+              <div class="single-footer">
+                <h4><strong>contact us</strong></h4>
+                <ul>
+                  <li><a
+                      href="https://www.google.com/maps/place/Srinivasa+Ramanujan+Institute+of+Technology/@14.745218,77.689634,15z/data=!4m5!3m4!1s0x0:0x562a417d3d2e8c01!8m2!3d14.745218!4d77.689634"
+                      target="blank"><i class="fa fa-map-marker"></i> Anantapur, Andhra Pradesh, India</a></li>
+                  <li><a href=""><i class="fa fa-mobile"></i> +91 9515611111</a></li>
+                  <li><a href="http://www.programmersclub@srit.ac.in" target="_blank"><i class="fa fa-envelope"></i>programmersclub@srit.ac.in</a>
+                  </li>
+                  <li><a href="www.sritprogrammersclub.com"><i class="fa fa-globe"></i> www.sritprogrammersclub.com</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="copy">
+              <p>&copy; 2021 all rights reserved</p>
+            </div>
+          </div>
+        </footer>
+      </section>
+    
+    
+    
+
+    <!-- #footer -->
+    <div id="MyPopup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;</button>
+
+                </div>
+                <div class="modal-body">
+                    Our site will collect and maintain personal information provided by its users, including their
+                    names, email addresses, and so forth.
+                </div>
+                <div class="modal-footer">
+                    <input type="button" id="btnClosePopup" value="Close" class="btn btn-danger" data-dismiss="modal" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="MyPopup2" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;</button>
+
+                </div>
+                <div class="modal-body">
+                    <pre>1.Only SRIT students are allowed to access.
+  2.Only Admin can read and respond to contact messages.
+              </pre>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" id="btnClosePopup" value="Close" class="btn btn-danger" data-dismiss="modal" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $("a[class='Update']").click(function () {
+                $("#MyPopup").modal("show");
+                return false;
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("a[class='Terms']").click(function () {
+                $("#MyPopup2").modal("show");
+                return false;
+            });
+        });
+    </script>
+
+
+
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    
+</body>
+
+</html>

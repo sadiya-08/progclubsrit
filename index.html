@@ -1,0 +1,700 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 , maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Programmers Club</title>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--home page links b-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+    rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  <!--end other-->
+
+
+  <!--slider-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script type="text/javascript">
+        function zoom() {
+            document.body.style.zoom = "88%" 
+        }
+</script>
+  <!--end slider-->
+  <!--css-->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <!--end css-->
+ 
+  <style>
+    nav {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      right: 0;
+
+      font-family: 'Montserrat', sans-serif;
+      height: 100px;
+
+    }
+
+    nav .nav-menu {
+      float: right;
+      padding: 0;
+      margin: 0;
+      width: 50%;
+      height: 50%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    nav .nav-menu li {
+      list-style: none;
+
+    }
+
+    nav .nav-menu a {
+      display: block;
+      padding: 1em;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    #nav-toggle {
+      position: absolute;
+      top: -100px;
+    }
+
+    nav .icon-burger {
+      display: none;
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    nav .icon-burger .line {
+      width: 30px;
+      height: 5px;
+      background-color: #fff;
+      margin: 5px;
+      border-radius: 3px;
+      transition: all .3s ease-in-out;
+    }
+    
+
+    @media screen and (max-width: 1200px) {
+      @media(max-width: 468px) {
+        nav {
+          display: block;
+          padding: 1em;
+          font-size: 50px;
+          font-weight: bold;
+          color: white;
+          text-decoration: none;
+        }
+      }
+
+      nav .nav-menu {
+        float: none;
+        position: fixed;
+        z-index: 9;
+        left: 0;
+        right: 0;
+        top: 100px;
+        bottom: 100%;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgba(0, 0, 0, .8);
+        overflow: hidden;
+        box-sizing: border-box;
+        transition: all .5s ease-in-out;
+      }
+
+      nav .nav-menu a {
+        font-size: 20px;
+      }
+
+      nav :checked~.nav-menu {
+        bottom: 0;
+      }
+
+      nav .icon-burger {
+        display: block;
+      }
+
+      nav :checked~.icon-burger .line:nth-child(1) {
+        transform: translateY(10px) rotate(225deg);
+      }
+
+      nav :checked~.icon-burger .line:nth-child(3) {
+        transform: translateY(-10px) rotate(-225deg);
+      }
+
+      nav :checked~.icon-burger .line:nth-child(2) {
+        opacity: 0;
+      }
+    }
+  </style>
+  
+  
+</head>
+
+<body onload="zoom()">
+
+  
+  <header id="header">
+    <div class="container-fluid">
+
+      <nav id="nav-menu-container">
+        <input id="nav-toggle" type="checkbox">
+        <div id="logo" class="pull-left">
+          <h1><a>Programmers Club</a></h1>
+        </div>
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="/">Home</a></li>
+          <li><a href="/compt">Competitions</a></li>
+          <li><a href="/resources">Resources</a></li>
+          <li><a href="/testimonals">Testimonials</a></li>
+          <li><a href="http://sritproclub.herokuapp.com" target="_blank">Blog</a></li>
+          <li>
+            <form style="padding-right:10px;">
+              <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                data-payment_button_id="pl_HIDvp4Tp9X9JYj" async> </script>
+            </form>
+          </li>
+        </ul>
+        <label for="nav-toggle" class="icon-burger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </label>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+
+
+  <!--==========================
+      Intro Section
+    ============================-->
+  <div class="container-fluid p-0">
+    <div id="carousel" class="carousel slide hero-slides" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li class="active" data-target="#carousel" data-slide-to="0"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+        <li data-target="#carousel" data-slide-to="3"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active boat">
+          <div id="int">
+            <div class="int-container wow fadeIn">
+              <h1 class="mb-4 pb-0">Hack With<span> SRIT</span><br> Season 2</h1>
+              <p class="mb-4 pb-0">23 August |Mon |2021
+                , SRIT Campus</p>
+              <a href="https://youtu.be/NPsJpn75fts" target="_blank" class="venobox play-btn mb-4" data-vbtype="video"
+                data-autoplay="true"></a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdYorq0p3DCokmHnUaSpoQS8lmgW_iD9uIC9FOuMsLr0SPmAg/viewform"
+                target="_blank" class="about-btn scrollto">Register</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="carousel-item river">
+          <div class="container h-100 d-md-block">
+            <div class="counting">
+              <div class="overlay"></div>
+              <div class="wrapper">
+                <div class="">
+                  <h1 class="title"><span><b>2021</b></span><b>Hack With SRIT Season 2</b></h1>
+                  <div class="countdown-container">
+                    <div>
+                      <p id="days" class="big-text">0</p>
+                      <span>Days</span>
+                    </div>
+                    <div>
+                      <p id="hours" class="big-text">0</p>
+                      <span>Hours</span>
+                    </div>
+                    <div>
+                      <p id="min" class="big-text">0</p>
+                      <span>Min</span>
+                    </div>
+                    <div>
+                      <p id="sec" class="big-text">0</p>
+                      <span>Sec</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class="carousel-item sea">
+          <div class="container h-100 d-md-block">
+            <div class="row align-items-center h-100 d-flex justify-content-center align-self-center">
+              <div class="col-12  col-md-5  col-lg-9 col-xl-15">
+                <div class="caption animated fadeIn">
+                  <h1 class="animated fadeInLeft"><b>LEARN AND PRACTICE CODING</b></h1>
+                  <p class="animated fadeInRight">CHOOSE A COURSE</p>
+                  <p class="animated fadeInRight">
+                  <h1><a href="https://docs.google.com/document/d/1pQ94G3sikvaL_eJuRCgvp_b1TLl1mZDQ6OTZpNVYKeo/edit"
+                      target="_blank">C</a>|<a
+                      href="https://docs.google.com/document/d/1-TRBmWQkBP0YNMC3NlG8Fhpvqh_iqQBzsvsWmEMdqbQ/edit"
+                      target="_blank">Java</a>|<a
+                      href="https://docs.google.com/document/d/1T-1XhG3YRqyeX7qtRouIr2Ax9_ZJqf5cuH2YhA63OWI/edit"
+                      target="_blank">Python</a>|<a
+                      href="https://docs.google.com/document/d/1vDSOMBcBQCAOKX3Kj6QJXEH1Idxv2RdbIY55mY1EmV0/edit"
+                      target="_blank">DBMS</a></h1>
+                  </p>
+                  <a href="/resources" class="animated fadeInUp btn delicious-btn">Start Learning</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-item sea">
+          <div class="container h-100 d-md-block">
+            <div class="row align-items-center h-100 d-flex justify-content-center align-self-center">
+              <div class="col-12  col-md-5  col-lg-9 col-xl-15">
+               
+                <div class="caption animated fadeIn">
+                  <h1 class="animated fadeInLeft"><b>BE A BEST PROGRAMMER</b></h1>
+                  <p class="animated fadeInRight">IF U HAVE A BETTER CODE</p>
+                  <p class="animated fadeInRight">Login & Share
+                  </p>
+                  <a class="animated fadeInUp btn delicious-btn" href="http://sritproclub.herokuapp.com"
+                    target="_blank">Upload</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  </div>
+  </div>
+  <script>
+    let daysItem = document.querySelector("#days");
+    let hoursItem = document.querySelector("#hours");
+    let minItem = document.querySelector("#min");
+    let secItem = document.querySelector("#sec");
+
+
+    let countDown = () => {
+      let futureDate = new Date("23 August 2021");
+      let currentDate = new Date();
+      let myDate = futureDate - currentDate;
+      //console.log(myDate);
+
+      let days = Math.floor(myDate / 1000 / 60 / 60 / 24);
+
+      let hours = Math.floor(myDate / 1000 / 60 / 60) % 24;
+
+      let min = Math.floor(myDate / 1000 / 60) % 60;
+
+      let sec = Math.floor(myDate / 1000) % 60;
+
+      daysItem.innerHTML = days;
+      hoursItem.innerHTML = hours;
+      minItem.innerHTML = min;
+      secItem.innerHTML = sec;
+    }
+
+    countDown()
+
+    setInterval(countDown, 1000)
+
+
+  </script>
+
+  <!--==========================
+        About Us Section
+      ============================-->
+  <main id="main">
+    <section id="about">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>About Us</h3>
+          <p>Programmers Club at SRIT was established in the year 2019. It aims to establish a coding culture on campus, reaching every student
+            passionate about coding. This helps them immensely during placements and can also bring laurels to the
+            institution through various national and international programming contests. The Club’s main motto is
+            Empowering Knowledge. Programmers Club at SRIT will help students to get the updates of programming. It also contains
+            all the relevant details about the club right from its initiation. It consists of contact information form,
+            a blog to showcase the problems related to coding, previous month contest questions and
+            also a payment gateway integration to pay fees for campus hackathons.
+          </p>
+        </header>
+      </div>
+
+    </section><!-- #about -->
+
+
+    <!--==========================
+        gallery
+      ============================-->
+    <section id="gallery">
+      <div class="container">
+
+        <header class="section-header" data-animate-effect="fadeIn">
+          <h3>Gallery</h3>
+        </header>
+      </div>
+
+
+      <div class="container-fluiddd">
+
+
+        <div class="row mt-3">
+          {% for fe in fea %}
+
+          <div class="item col-sm-6 col-md-2 mb-2">
+            <a href="{{fe.img.url}}" class="fancybox" data-fancybox="gallery1">
+              <img src="{{fe.img.url}}" width="100%" height="100%">
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+
+    <!--facts-->
+    <section id="facts" class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Our Progress</h3>
+        </header>
+
+        <div class="row counters">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span class="counter-count">300</span>
+            <p>Registered Students</p>
+
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span class="counter-count">250</span>
+            <p>Participants</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span class="counter-count">5</span>
+            <p>Winners</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span class="counter-count">2000</span>
+            <p>Total Strength</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #facts -->
+
+    <!--==========================
+        Team Section
+      ============================-->
+    <section id="team">
+      <div class="container">
+        <div class="section-header wow fadeInUp">
+          <h3>Team</h3>
+          <p></p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 wow fadeInUp">
+            <div class="member">
+              <img src="{% static 'img/img/tabassum.jpg' %}" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Javeria Tabassum</h4>
+                  <span>Student</span>
+                  <div class="social">
+                    <a href="https://instagram.com/javeriatabassum_syed?utm_medium=copy_link" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    
+                    <a href="https://www.linkedin.com/in/javeria-tabassum-s-81a111196" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="member">
+              <img src="{% static 'img/img/sadiya.jpg' %}" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Sadiya Mudassir</h4>
+                  <span>Student</span>
+                  <div class="social">
+                    <a href="https://instagram.com/sadii230?utm_medium=copy_link" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                   
+                    <a href="https://www.linkedin.com/in/sadiyamudassir1" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="member">
+              <img src="{% static 'img/img/ashokmahendrakar.jpg' %}" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Ashok Mahendrakar</h4>
+                  <span>Student</span>
+                  <div class="social">
+                    <a href="https://www.facebook.com/profile.php?id=100005282352658" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              
+                    <a href="https://www.linkedin.com/in/ashok-mahendrakar-587658149" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="member">
+              <img src="{% static 'img/img/vamsi.jpg' %}" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Naga Vamsidhar Reddy</h4>
+                  <span>Student</span>
+                  <div class="social">
+                    <a href="https://instagram.com/____v_a_m_s_i____4_5____?utm_medium=copy_link" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              
+                    <a href="https://www.linkedin.com/in/vamsi-%E2%9C%8C-986596189" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+    <!--==========================
+        Contact Section
+      ============================-->
+    <section id="contact" class="section-bg wow fadeInUp">
+      <div class="container">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+          <strong>{{ message }}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <div class="section-header">
+          <h3>Contact Us</h3>
+        </div>
+        <div class="form">
+          <form method="post" role="form" class="contactForm">
+            {% csrf_token %}
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name"
+                   required data-rule="minlen:4" data-msg="Please enter atleast 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="phone" class="form-control" name="phone" id="phone" placeholder="Enter your number"
+                  pattern="[7-9][0-9]{9}" required data-rule="maxlen:12" data-rule="minlen:10"
+                  data-msg="Please enter a valid number" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter your email" required
+                  data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="subject" class="form-control" name="subject" id="subject" placeholder="Subject"
+                  data-rule="minlen:4" data-msg="Please enter atleast 4 chars" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" required rows="5" data-rule="required"
+                data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+            <div class="text-center"><button type="submit">SEND</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+
+  <script>
+    $('.counter-count').each(function () {
+      $(this).prop('Counter', 0).animate({
+        Counter: $(this).text()
+      }, {
+        duration: 5000,
+        easing: 'swing',
+        step: function (now) {
+          $(this).text(Math.ceil(now));
+        }
+      });
+    });
+
+  </script>
+
+
+  <!--==========================
+      Footer
+    ============================-->
+
+  <section>
+    <footer class="footer-area">
+      <div class="footer-wave-box">
+        <div class="footer-wave footer-animation"></div>
+      </div>
+      <div class="main">
+        <div class="footer">
+          <div class="single-footer">
+            <h4><strong>about us</strong></h4>
+            <p>Programming skills are essential to students in order to test and enhance their problem solving and analytical skills. Programmers Club aims to establish a coding culture on campus, reaching every student passionate about coding. This helps them immensely during placements and can also bring laurels to the institution through various national and international programming contests. The club’s main motto is Empowering Knowledge </p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/sritatp/" target="_blank"><i class="fa fa-facebook-f"></i></a>
+              <a href="https://twitter.com/sritatp?lang=en" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.instagram.com/sritatp/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/school/sritatp/?originalSubdomain=in" target="_blank"><i
+                  class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="single-footer">
+            <h4><strong>main menu</strong></h4>
+            <ul>
+              <li><a href="/"><i class="fa fa-chevron-right"></i> Home</a></li>
+              <li><a href="/compt"><i class="fa fa-chevron-right"></i> Competitions</a></li>
+              <li><a href="/resources"><i class="fa fa-chevron-right"></i> Resources</a></li>
+              <li><a href="/testimonals"><i class="fa fa-chevron-right"></i> Testimonials</a></li>
+              <li><a href="http://sritproclub.herokuapp.com" target="_blank"><i class="fa fa-chevron-right"></i>
+                  Blog</a></li>
+
+            </ul>
+          </div>
+          <div class="single-footer">
+            <h4><strong>quick links</strong></h4>
+            <ul>
+              <li><a><details><summary  class="fa fa-chevron-right"> <b> Privacy Policy</b></summary><p class="text"><ul><li>This site may use "cookies" to enhance User experience.</li><li>This site may take contact information of users only with their consent.</li><li>To improve our site We may use feedback you provide to improve our service.</li><li>To process payments - We do not share this information with outside parties except to the extent necessary to provide the service.</li></ul></p>
+              </details></a></li>
+              
+              <li><a><details><summary  class="fa fa-chevron-right"> <b> Terms and Conditions</b></summary><p class="text"><ul><li>In order to access our resources users may be required to provide certain information like contact details as a part registration.
+                Users must agree that any information they provide will always be accurate and up to date.</li></ul>
+              </p>
+              </details></a></li>
+
+
+            </ul>
+          </div>
+
+
+          <div class="single-footer">
+            <h4><strong>contact us</strong></h4>
+            <ul>
+              <li><a
+                  href="https://www.google.com/maps/place/Srinivasa+Ramanujan+Institute+of+Technology/@14.745218,77.689634,15z/data=!4m5!3m4!1s0x0:0x562a417d3d2e8c01!8m2!3d14.745218!4d77.689634"
+                  target="blank"><i class="fa fa-map-marker"></i> Anantapur, Andhra Pradesh, India</a></li>
+              <li><a href=""><i class="fa fa-mobile"></i> +91 9515611111</a></li>
+              <li><a href="http://www.programmersclub@srit.ac.in" target="_blank"><i class="fa fa-envelope"></i>programmersclub@srit.ac.in</a>
+              </li>
+              <li><a href="www.sritprogrammersclub.com"><i class="fa fa-globe"></i> www.sritprogrammersclub.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copy">
+          <p>&copy; 2021 all rights reserved</p>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!--counter-->
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+  <!--slider-->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+  <!---->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/animateCSS/1.2.2/jquery.animatecss.min.js"></script>
+
+
+  <!--homepage-->
+
+  <!--endhome-->
+
+</body>
+
+</html>
+

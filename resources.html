@@ -1,0 +1,356 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0 , maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Programmers Club</title>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+   
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+    rel="stylesheet">
+ 
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+  <script type="text/javascript">
+        function zoom() {
+            document.body.style.zoom = "88%" 
+        }
+</script>
+  <style>
+    nav {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      right: 0;
+      
+      font-family: 'Montserrat', sans-serif;
+      height: 100px;
+      
+  }
+  nav .nav-menu{
+    float: right; 
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  nav .nav-menu li {
+    list-style: none;
+  } 
+  nav .nav-menu a{
+    display: block;
+    padding: 1em;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+  #nav-toggle{
+    position: absolute;
+    top: -100px;
+  }
+  nav .icon-burger{
+    display:none;
+    position: absolute;
+    right: 5%;
+    top: 50%; 
+    transform: translateY(-50%);
+  }
+  nav .icon-burger .line {
+    width: 30px;
+    height: 5px;
+    background-color: #fff;
+    margin: 5px;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+  }
+  @media screen and (max-width: 1200px) {
+    nav .nav-menu {
+      float: none;
+      position: fixed;
+      z-index: 9;
+      left: 0;
+      right: 0;
+      top: 100px;
+      bottom: 100%;
+      width: auto;
+      height: auto;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background-color: rgba(0,0,0,.8);
+      overflow: hidden;
+      box-sizing: border-box;
+      transition: all .5s ease-in-out;
+    }
+    nav .nav-menu a {
+      font-size: 20px;
+    }
+    nav :checked ~ .nav-menu {
+      bottom: 0;
+    }
+    nav .icon-burger {
+      display: block;
+    }
+    nav :checked ~ .icon-burger .line:nth-child(1) {
+      transform: translateY(10px) rotate(225deg);
+    }
+    nav :checked ~ .icon-burger .line:nth-child(3) {
+      transform: translateY(-10px) rotate(-225deg);
+    }
+    nav :checked ~ .icon-burger .line:nth-child(2) {
+      opacity: 0;
+    }
+  }
+  </style>
+  </head>
+  
+  
+  
+  <body onload="zoom()">
+    <header id="header">
+      <div class="container-fluid">
+              
+        <nav id="nav-menu-container">
+          <input id="nav-toggle" type="checkbox">
+          <div id="logo" class="pull-left">
+            <h1><a class="scrollto">Programmers Club</a></h1>
+          </div>
+          <ul class="nav-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/compt">Competitions</a></li>
+            <li class="menu-active"><a href="/resources">Resources</a></li>
+            <li><a href="/testimonals">Testimonials</a></li>
+            <li><a href="http://sritproclub.herokuapp.com" target="_blank">Blog</a></li>
+            <li>
+              <form style="padding-right:10px;">
+                <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                  data-payment_button_id="pl_HIDvp4Tp9X9JYj" async> </script>
+              </form>
+            </li>
+          </ul>
+          <label for="nav-toggle" class="icon-burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </label>
+        </nav><!-- #nav-menu-container -->
+      </div>
+    </header><!-- #header -->
+  
+  
+  <section id="screen">
+    <div class="page-heading about-heading header-text">
+      <div class="container">
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="course" id="course">
+    <section id="resources">
+      <div class="container">
+
+        <header class="section-header">
+          <h3>Our Club Resources</h3>
+        </header>
+      </div>
+
+    </section>
+
+
+    <div class="box-container">
+
+      <div class="box">
+        <img src="{% static 'img/img/cimg.jpg' %}" alt="">
+
+        <div class="content">
+          <a class="title"> C </a>
+          <p>C language Tutorial with programming approach for beginners and professionals, helps you to understand the C language tutorial easily. 
+            Our C tutorial explains each topic with programs.</p>
+          <a class="btn" href="https://docs.google.com/document/d/1pQ94G3sikvaL_eJuRCgvp_b1TLl1mZDQ6OTZpNVYKeo/edit" target="_blank"><b>Learn More</b></a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="{% static 'img/img/java.jpg' %}" alt="">
+
+        <div class="content">
+          <a class="title"> JAVA</a>
+          <p>Our core Java programming tutorial is designed for students and working professionals. Java is an object-oriented, class-based, concurrent, secured and general-purpose computer-programming language.
+            </p>
+          <a class="btn" href="https://docs.google.com/document/d/1-TRBmWQkBP0YNMC3NlG8Fhpvqh_iqQBzsvsWmEMdqbQ/edit" target="_blank"><b>Learn More</b></a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="{% static 'img/img/git and python.jpg' %}" alt="">
+
+        <div class="content">
+          <a class="title">PYTHON & GIT</a>
+          <p>Python is an easy to learn, powerful programming language. 
+            It has efficient high-level data structures and a simple but effective approach to object-oriented programming. Git is used for python projects.</p>
+          <a class="btn" href="https://docs.google.com/document/d/1T-1XhG3YRqyeX7qtRouIr2Ax9_ZJqf5cuH2YhA63OWI/edit" target="_blank"><b>Learn More</b></a>
+        </div>
+      </div>
+      
+      <div class="box">
+        <img src="{% static 'img/img/c++.jpg' %}" alt="">
+
+        <div class="content">
+          <a class="title"> C++</a>
+          <p>C++ language Tutorial with programming approach for beginners and professionals, helps you to understand the C++ language tutorial easily. 
+            Our C++ tutorial explains each topic with programs.</p>
+          <a class="btn" href="https://docs.google.com/document/d/1z6vm4TLdfNaxkSfiPr4UlIiZ29A1Baah5aCTg0X2idw/edit" target="_blank"><b>Learn More</b></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="{% static 'img/img/html.png' %}" alt="">
+
+        <div class="content">
+          <a class="title"> HTML</a>
+          <p>HTML tutorial or HTML 5 tutorial provides basic and advanced concepts of HTML.
+            Our HTML tutorial is developed for beginners and professionals. Html is used to create web applications.</p>
+          <a class="btn" href="https://docs.google.com/document/d/1WV5enVsTX2-CfSRz8xe5Y1HC8V2babPeSyObT-Bax8w/edit" target="_blank"><b>Learn More</b></a>
+        </div>
+      </div>
+
+      <div class="box">
+        <img src="{% static 'img/img/django.png' %}" alt="">
+
+        <div class="content">
+          <a class="title">Django</a>
+          <p>Django Framework Tutorial with programming approach for beginners and professionals, helps you to understand django framework tutorial easily. 
+            Our django tutorial explains each topic with programs.</p>
+          <a class="btn" href="https://docs.google.com/document/d/1FFl6-N5fuEGzT5vWPMbBSeuCqydYrDlVoRCWSa7spGw/edit" target="_blank"><b>Learn More</b></a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="{% static 'img/img/ml.png' %}" alt="">
+
+        <div class="content">
+          <a class="title"> ML & AI</a>
+          <p>Machine Learning and Artificial Intelligence tutorial provides basic and advanced concepts of AI and ML.
+            Our Machine Learning and Artificial Intelligence tutorial is developed for beginners and professionals.</p>
+          <a class="btn" href="https://docs.google.com/document/d/10zuAH5g4bgQToTpRILBCScRol1RlT5AUk8hvVZEUzTU/edit" target="_blank"><b>Learn More</b></a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="{% static 'img/img/DS.jpg' %}" alt="">
+
+        <div class="content">
+          <a class="title"> DATA STRUCTURES</a>
+          <p>Data Structures Tutorial with programming approach for beginners and professionals, helps you to understand DS tutorial easily. 
+            Our Data Structures tutorial explains each topic with programs.</p>
+          <a class="btn" href="https://docs.google.com/document/d/12oWAhvcHHwo--BTNv-MLVlRVu4Dw2StsnBhjG2S3Hb0/edit" target="_blank"><b>Learn More</b></a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="{% static 'img/img/dbms.jpg' %}" alt="">
+
+        <div class="content">
+          <a class="title"> DBMS</a>
+          <p>DBMS tutorial provides basic and advanced concepts of DBMS
+            Our DBMS tutorial is designed for beginners and professionals. DBMS includes all topics such as introduction, ER model, keys, relational model, SQL.</p>
+          <a class="btn" href="https://docs.google.com/document/d/1vDSOMBcBQCAOKX3Kj6QJXEH1Idxv2RdbIY55mY1EmV0/edit" target="_blank"><b>Learn More</b></a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- course section ends -->
+
+  <!--footer-->
+ 
+  <section>
+    <footer class="footer-area">
+      <div class="footer-wave-box">
+        <div class="footer-wave footer-animation"></div>
+      </div>
+      <div class="main">
+        <div class="footer">
+          <div class="single-footer">
+            <h4><strong>about us</strong></h4>
+            <p>Programming skills are essential to students in order to test and enhance their problem solving and analytical skills. Programmers Club aims to establish a coding culture on campus, reaching every student passionate about coding. This helps them immensely during placements and can also bring laurels to the institution through various national and international programming contests. The club’s main motto is Empowering Knowledge </p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/sritatp/" target="_blank"><i class="fa fa-facebook-f"></i></a>
+              <a href="https://twitter.com/sritatp?lang=en" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.instagram.com/sritatp/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/school/sritatp/?originalSubdomain=in" target="_blank"><i
+                  class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="single-footer">
+            <h4><strong>main menu</strong></h4>
+            <ul>
+              <li><a href="/"><i class="fa fa-chevron-right"></i> Home</a></li>
+              <li><a href="/compt"><i class="fa fa-chevron-right"></i> Competitions</a></li>
+              <li><a href="/resources"><i class="fa fa-chevron-right"></i> Resources</a></li>
+              <li><a href="/testimonals"><i class="fa fa-chevron-right"></i> Testimonials</a></li>
+              <li><a href="http://sritproclub.herokuapp.com" target="_blank"><i class="fa fa-chevron-right"></i>
+                  Blog</a></li>
+
+            </ul>
+          </div>
+          <div class="single-footer">
+            <h4><strong>quick links</strong></h4>
+            <ul>
+              <li><a><details><summary  class="fa fa-chevron-right"> <b> Privacy Policy</b></summary><p class="text"><ul><li>This site may use "cookies" to enhance User experience.</li><li>This site may take contact information of users only with their consent.</li><li>To improve our site We may use feedback you provide to improve our service.</li><li>To process payments - We do not share this information with outside parties except to the extent necessary to provide the service.</li></ul></p>
+              </details></a></li>
+              
+              <li><a><details><summary  class="fa fa-chevron-right"> <b> Terms and Conditions</b></summary><p class="text"><ul><li>In order to access our resources users may be required to provide certain information like contact details as a part registration.
+                Users must agree that any information they provide will always be accurate and up to date.</li></ul>
+              </p>
+              </details></a></li>
+
+
+            </ul>
+          </div>
+
+
+          <div class="single-footer">
+            <h4><strong>contact us</strong></h4>
+            <ul>
+              <li><a
+                  href="https://www.google.com/maps/place/Srinivasa+Ramanujan+Institute+of+Technology/@14.745218,77.689634,15z/data=!4m5!3m4!1s0x0:0x562a417d3d2e8c01!8m2!3d14.745218!4d77.689634"
+                  target="blank"><i class="fa fa-map-marker"></i> Anantapur, Andhra Pradesh, India</a></li>
+              <li><a href=""><i class="fa fa-mobile"></i> +91 9515611111</a></li>
+              <li><a href="http://www.programmersclub@srit.ac.in" target="_blank"><i class="fa fa-envelope"></i>programmersclub@srit.ac.in</a>
+              </li>
+              <li><a href="www.sritprogrammersclub.com"><i class="fa fa-globe"></i> www.sritprogrammersclub.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copy">
+          <p>&copy; 2021 all rights reserved</p>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+
+
+  <!-- #footer -->
+  
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- jquery cdn link  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <!-- custom js file link  -->
+ 
+</body>
+
+</html>
