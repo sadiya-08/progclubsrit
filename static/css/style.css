@@ -1210,8 +1210,8 @@ min-height:350px;
   }
   
   #int .play-btn {
-    width: 25%;
-    height: 21%;
+    width: 18%;
+    height: 18%;
     background: radial-gradient(#f82249 50%, rgba(101, 111, 150, 0.15) 52%);
     border-radius: 50%;
     display: block;
